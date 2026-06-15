@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariham Mahfouz Shokry | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#d4af37;
+  --gold2:#f1d98a;
+  --light:#f8f8f8;
+  --muted:#bdbdbd;
+  --line:rgba(212,175,55,.20);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 18% 8%,rgba(212,175,55,.13),transparent 26%),
+    linear-gradient(145deg,#080808,#151515 50%,#090909);
+  color:var(--light);
+  line-height:1.55;
+  padding-bottom:60px;
+}
+.container{width:min(1160px,calc(100% - 46px));margin:auto}
+.hero{
+  min-height:42vh;
+  display:flex;
+  align-items:center;
+  padding:72px 0 34px;
+  position:relative;
+  overflow:hidden;
+}
+.hero:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(180deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:72px 72px;
+  opacity:.42;
+}
+.hero-inner{position:relative;z-index:1}
+.kicker{
+  color:var(--gold2);
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:.78rem;
+  margin-bottom:10px;
+}
+h1{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-size:clamp(2.8rem,7vw,5.8rem);
+  line-height:.95;
+  margin-bottom:12px;
+}
+.subtitle{color:rgba(248,248,248,.82);font-size:1.08rem;font-weight:600}
+.quick-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+  color:var(--light);
+  text-decoration:none;
+  padding:11px 16px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:.86rem;
+  transition:.25s;
+}
+.btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;border:0}
+.section{padding:34px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
+.section-title{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-size:clamp(2rem,4vw,3rem);
+}
+.counter{
+  color:var(--muted);
+  font-weight:800;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:999px;
+  padding:8px 13px;
+  background:rgba(255,255,255,.04);
+}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  position:relative;
+  min-height:310px;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:#151515;
+  transition:.32s ease;
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.55)}
+.thumb-link{display:block;width:100%;height:100%;min-height:310px;color:inherit;text-decoration:none;position:relative}
+.card img{width:100%;height:100%;min-height:310px;object-fit:cover;display:block;transition:.45s ease}
+.card:hover img{transform:scale(1.045)}
+.card-info{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:18px;
+  background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
+}
+.badge{
+  display:inline-flex;
+  padding:5px 10px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#111;
+  font-size:.72rem;
+  font-weight:900;
+  margin-bottom:9px;
+}
+.card-title{font-size:1.08rem;font-weight:900}
+.video-wrap{
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 24% 20%,rgba(212,175,55,.14),transparent 28%),
+    linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+  padding:22px;
+}
+.video-placeholder{
+  min-height:300px;
+  border-radius:22px;
+  border:1px dashed rgba(212,175,55,.42);
+  background:rgba(0,0,0,.24);
+  display:grid;
+  place-items:center;
+  text-align:center;
+  color:var(--muted);
+}
+.video-placeholder strong{display:block;color:var(--gold);font-size:1.45rem;margin-bottom:5px}
+.floating-social{
+  position:fixed;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:90;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.floating-social a{
+  width:48px;height:48px;display:grid;place-items:center;border-radius:50%;
+  background:rgba(18,18,18,.76);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 14px 30px rgba(0,0,0,.3);
+  text-decoration:none;
+  backdrop-filter:blur(10px);
+}
+.floating-social svg{width:23px;height:23px;fill:currentColor}
+.whatsapp{color:#25D366}
+.linkedin{color:#0A66C2}
+.footer{text-align:center;color:rgba(248,248,248,.5);padding:30px 0 0;font-size:.85rem}
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.lightbox:target{display:flex}
+.lightbox-bg{position:absolute;inset:0;background:rgba(0,0,0,.92)}
+.lightbox-inner{position:relative;z-index:1;width:min(1100px,100%)}
+.lightbox-inner img{width:100%;max-height:82vh;object-fit:contain;border-radius:18px;background:#111}
+.lightbox-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px}
+.lightbox-title{font-weight:900;color:var(--light)}
+.close{
+  border:0;
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:900;
+  cursor:pointer;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#111;
+  text-decoration:none;
+}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+  .container{width:calc(100% - 54px)}
+  .hero{min-height:34vh;padding-top:54px}
+  .grid{grid-template-columns:1fr}
+  .card,.thumb-link,.card img{min-height:270px}
+  .section-head{display:block}
+  .counter{display:inline-flex;margin-top:10px}
+  .floating-social{right:8px}
+  .floating-social a{width:39px;height:39px}
+}
+
+.mobile-safe-video-frame{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(212,175,55,.28);
+  background:#050505;
+  box-shadow:0 24px 70px rgba(0,0,0,.35);
+}
+.mobile-safe-video-frame video{
+  width:100%;
+  height:auto;
+  display:block;
+  background:#050505;
+  object-fit:contain;
+}
+.mobile-video-note{
+  margin:14px auto 0;
+  max-width:720px;
+  color:rgba(255,255,255,.62);
+  font-size:13px;
+  text-align:center;
+}
+@media(max-width:640px){
+  .video-wrap{padding:10px;border-radius:22px}
+  .mobile-safe-video-frame{border-radius:18px}
+  .mobile-safe-video-frame video{width:100%;max-height:78vh}
+}
+
+</style>
+</head>
+<body>
+
+<div class="floating-social">
+  <a class="whatsapp" href="https://wa.me/201093844261" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M19.11 17.44c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.08-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.12.28-.33.42-.5.14-.17.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43s1.03 2.81 1.18 3c.14.19 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.81.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z"/><path d="M16.02 3C8.86 3 3.04 8.78 3.04 15.89c0 2.27.6 4.49 1.74 6.44L3 29l6.84-1.79a13.05 13.05 0 0 0 6.18 1.56C23.18 28.77 29 22.99 29 15.89S23.18 3 16.02 3zm0 23.58c-1.99 0-3.94-.53-5.64-1.54l-.4-.24-4.06 1.06 1.08-3.94-.26-.41a10.6 10.6 0 0 1-1.62-5.62c0-5.89 4.89-10.69 10.9-10.69s10.9 4.8 10.9 10.69-4.89 10.69-10.9 10.69z"/></svg>
+  </a>
+  <a class="linkedin" href="https://www.linkedin.com/in/mariham-mansour-259087126" target="_blank" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.43 8.02h4.12V23H.43V8.02zM7.5 8.02h3.95v2.05h.06c.55-1.04 1.9-2.14 3.91-2.14 4.18 0 4.95 2.75 4.95 6.33V23h-4.12v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.98 2.02-2.98 4.1V23H7.5V8.02z"/></svg>
+  </a>
+</div>
+
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="kicker">Creative Portfolio</div>
+    <h1>Mariham Mahfouz Shokry</h1>
+    <div class="subtitle">Graphic Design & Video</div>
+    <div class="quick-actions">
+      <a href="#designs" class="btn primary">Designs</a>
+      <a href="#video" class="btn">Video</a>
+      <a href="index.html" class="btn">Back to CV</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="designs">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Graphic Design</h2>
+        <span class="counter">21 Works</span>
+      </div>
+      <div class="grid">
+    <article class="card">
+      <a href="#work-7" class="thumb-link" aria-label="AI Court Book Cover">
+        <img src="assets/images/portfolio_img_01.webp" alt="AI Court Book Cover">
+        <div class="card-info">
+          <div class="badge">Book Cover</div>
+          <div class="card-title">AI Court Book Cover</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-7">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_02.webp" alt="AI Court Book Cover">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">AI Court Book Cover</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-21" class="thumb-link" aria-label="AIUEC Exterior Sign">
+        <img src="assets/images/portfolio_img_03.webp" alt="AIUEC Exterior Sign">
+        <div class="card-info">
+          <div class="badge">Signage Design</div>
+          <div class="card-title">AIUEC Exterior Sign</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-21">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_04.webp" alt="AIUEC Exterior Sign">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">AIUEC Exterior Sign</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    
+        
+    <article class="card">
+      <a href="#work-1" class="thumb-link" aria-label="Corporate Identity">
+        <img src="assets/images/portfolio_img_05.webp" alt="Corporate Identity">
+        <div class="card-info">
+          <div class="badge">Branding</div>
+          <div class="card-title">Corporate Identity</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-1">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_06.webp" alt="Corporate Identity">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Corporate Identity</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+
+    <article class="card">
+      <a href="#work-2" class="thumb-link" aria-label="Medical Brochure">
+        <img src="assets/images/portfolio_img_07.webp" alt="Medical Brochure">
+        <div class="card-info">
+          <div class="badge">Print Design</div>
+          <div class="card-title">Medical Brochure</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-2">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_08.webp" alt="Medical Brochure">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Medical Brochure</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    <article class="card">
+      <a href="#work-3" class="thumb-link" aria-label="Official ID Card">
+        <img src="assets/images/portfolio_img_09.webp" alt="Official ID Card">
+        <div class="card-info">
+          <div class="badge">Identity Design</div>
+          <div class="card-title">Official ID Card</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-3">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_10.webp" alt="Official ID Card">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Official ID Card</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-4" class="thumb-link" aria-label="Electronic Report Cover">
+        <img src="assets/images/portfolio_img_11.webp" alt="Electronic Report Cover">
+        <div class="card-info">
+          <div class="badge">Report Cover</div>
+          <div class="card-title">Electronic Report Cover</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-4">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_12.webp" alt="Electronic Report Cover">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Electronic Report Cover</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-5" class="thumb-link" aria-label="Websites Report Cover">
+        <img src="assets/images/portfolio_img_13.webp" alt="Websites Report Cover">
+        <div class="card-info">
+          <div class="badge">Report Cover</div>
+          <div class="card-title">Websites Report Cover</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-5">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_14.webp" alt="Websites Report Cover">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Websites Report Cover</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-6" class="thumb-link" aria-label="Restaurant Menu">
+        <img src="assets/images/portfolio_img_15.webp" alt="Restaurant Menu">
+        <div class="card-info">
+          <div class="badge">Menu Design</div>
+          <div class="card-title">Restaurant Menu</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-6">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_16.webp" alt="Restaurant Menu">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Restaurant Menu</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-8" class="thumb-link" aria-label="Ministry Media Logo">
+        <img src="assets/images/portfolio_img_17.webp" alt="Ministry Media Logo">
+        <div class="card-info">
+          <div class="badge">Logo Design</div>
+          <div class="card-title">Ministry Media Logo</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-8">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_18.webp" alt="Ministry Media Logo">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Ministry Media Logo</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    
+
+    <article class="card">
+      <a href="#work-9" class="thumb-link" aria-label="Educational Magazine Spread">
+        <img src="assets/images/portfolio_img_19.webp" alt="Educational Magazine Spread">
+        <div class="card-info">
+          <div class="badge">Editorial Design</div>
+          <div class="card-title">Educational Magazine Spread</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-9">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_20.webp" alt="Educational Magazine Spread">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Educational Magazine Spread</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+
+    <article class="card">
+      <a href="#work-10" class="thumb-link" aria-label="Children Educational Layout">
+        <img src="assets/images/portfolio_img_21.webp" alt="Children Educational Layout">
+        <div class="card-info">
+          <div class="badge">Editorial Design</div>
+          <div class="card-title">Children Educational Layout</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-10">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_22.webp" alt="Children Educational Layout">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Children Educational Layout</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+
+    <article class="card">
+      <a href="#work-11" class="thumb-link" aria-label="French Course Poster">
+        <img src="assets/images/portfolio_img_23.webp" alt="French Course Poster">
+        <div class="card-info">
+          <div class="badge">Poster Design</div>
+          <div class="card-title">French Course Poster</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-11">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_24.webp" alt="French Course Poster">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">French Course Poster</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    <article class="card">
+      <a href="#work-12" class="thumb-link" aria-label="Ministry of Justice Emblem">
+        <img src="assets/images/portfolio_img_25.webp" alt="Ministry of Justice Emblem">
+        <div class="card-info">
+          <div class="badge">Emblem Design</div>
+          <div class="card-title">Ministry of Justice Emblem</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-12">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_26.webp" alt="Ministry of Justice Emblem">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Ministry of Justice Emblem</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    
+    <article class="card">
+      <a href="#work-13" class="thumb-link" aria-label="Certificate of Appreciation">
+        <img src="assets/images/portfolio_img_27.webp" alt="Certificate of Appreciation">
+        <div class="card-info">
+          <div class="badge">Certificate Design</div>
+          <div class="card-title">Certificate of Appreciation</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-13">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_28.webp" alt="Certificate of Appreciation">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Certificate of Appreciation</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-14" class="thumb-link" aria-label="Certificate of Appreciation">
+        <img src="assets/images/portfolio_img_29.webp" alt="Certificate of Appreciation">
+        <div class="card-info">
+          <div class="badge">Certificate Design</div>
+          <div class="card-title">Certificate of Appreciation</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-14">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_30.webp" alt="Certificate of Appreciation">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Certificate of Appreciation</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-15" class="thumb-link" aria-label="Training Roll-Up Banner">
+        <img src="assets/images/portfolio_img_31.webp" alt="Training Roll-Up Banner">
+        <div class="card-info">
+          <div class="badge">Roll-Up Design</div>
+          <div class="card-title">Training Roll-Up Banner</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-15">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_32.webp" alt="Training Roll-Up Banner">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Training Roll-Up Banner</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-16" class="thumb-link" aria-label="Ministry Business Card">
+        <img src="assets/images/portfolio_img_33.webp" alt="Ministry Business Card">
+        <div class="card-info">
+          <div class="badge">Business Card</div>
+          <div class="card-title">Ministry Business Card</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-16">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_34.webp" alt="Ministry Business Card">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Ministry Business Card</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-17" class="thumb-link" aria-label="Training Certificate">
+        <img src="assets/images/portfolio_img_35.webp" alt="Training Certificate">
+        <div class="card-info">
+          <div class="badge">Certificate Design</div>
+          <div class="card-title">Training Certificate</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-17">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_36.webp" alt="Training Certificate">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Training Certificate</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-18" class="thumb-link" aria-label="Deutschland Metal Logo">
+        <img src="assets/images/portfolio_img_37.webp" alt="Deutschland Metal Logo">
+        <div class="card-info">
+          <div class="badge">Logo Design</div>
+          <div class="card-title">Deutschland Metal Logo</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-18">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_38.webp" alt="Deutschland Metal Logo">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Deutschland Metal Logo</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-19" class="thumb-link" aria-label="Medical Brochure">
+        <img src="assets/images/portfolio_img_39.webp" alt="Medical Brochure">
+        <div class="card-info">
+          <div class="badge">Print Design</div>
+          <div class="card-title">Medical Brochure</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-19">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_40.webp" alt="Medical Brochure">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Medical Brochure</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+    
+    <article class="card">
+      <a href="#work-20" class="thumb-link" aria-label="Professional Skills Certificate">
+        <img src="assets/images/portfolio_img_41.webp" alt="Professional Skills Certificate">
+        <div class="card-info">
+          <div class="badge">Certificate Design</div>
+          <div class="card-title">Professional Skills Certificate</div>
+        </div>
+      </a>
+    </article>
+
+    <div class="lightbox" id="work-20">
+      <a href="#designs" class="lightbox-bg" aria-label="Close"></a>
+      <div class="lightbox-inner">
+        <img src="assets/images/portfolio_img_42.webp" alt="Professional Skills Certificate">
+        <div class="lightbox-bar">
+          <div class="lightbox-title">Professional Skills Certificate</div>
+          <a class="close" href="#designs">Close</a>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="video">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Video</h2>
+        <span class="counter">1 Slot</span>
+      </div>
+      <div class="video-wrap">
+        <div class="mobile-safe-video-frame">
+          <video
+            controls
+            playsinline
+            webkit-playsinline
+            preload="metadata"
+            poster="assets/videos/mariham-video-poster.jpg"
+            controlsList="nodownload noplaybackrate noremoteplayback"
+            disablepictureinpicture
+            oncontextmenu="return false;"
+          >
+            <source src="assets/videos/mariham-portfolio-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="mobile-video-note">Tap play to view the portfolio video</div>
+      </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">© 2026 | Mariham Mahfouz Shokry</footer>
+
+</body>
+</html>
